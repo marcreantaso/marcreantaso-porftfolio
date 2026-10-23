@@ -200,6 +200,7 @@
     transform: translateX(-110%);
     opacity: 0;
   }
+
   15% {
     opacity: 1;
   }

@@ -1,9 +1,9 @@
-import { Trophy } from "lucide-react";
+import { ArrowUpRight, Trophy } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MetricCard } from "./MetricCard";
 import { ComplexityChart } from "./ComplexityChart";
+import { AGRIGUARD_METRIC_CONFIG } from "@/lib/data/agriguardMetric";
 import { DecisionVisual, PipelineVisual, SignalVisual, TopologyVisual } from "./visuals";
-import { site } from "@/lib/data/site";
 
 function Stat({ value, label }: { value: string; label: string }) {
   return (
@@ -61,7 +61,7 @@ export function BentoGrid() {
 
           <MetricCard
             index="02"
-            kicker="hackathon champion"
+            kicker="champion · the great flavor byte"
             accent="mint"
             delay={0.06}
             className="md:col-span-3 lg:col-span-7"
@@ -73,14 +73,33 @@ export function BentoGrid() {
                   <Trophy size={11} aria-hidden="true" /> Champion
                 </span>
                 <span>4 relational tables</span>
-                <span className="hidden sm:inline">1 deployment</span>
+                <span>1 deployment</span>
               </>
             }
           >
-            <TopologyVisual />
-            <p className="mt-3 font-mono text-[9px] leading-relaxed text-faint">
-              ACCS × Lucky Me Idea Noodling Competition · {site.award.project}
-            </p>
+            <div className="space-y-3">
+              <TopologyVisual />
+              <p className="rounded-lg border border-mint/25 bg-mint/[0.06] px-3 py-2 font-mono text-[10px] leading-relaxed text-mint">
+                ACCS × Lucky Me Idea Noodling Competition
+              </p>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-white/[0.06] pt-3 font-mono text-[10px]">
+                <a href={AGRIGUARD_METRIC_CONFIG.destinations.caseStudy} className="inline-flex items-center gap-1.5 text-ink transition hover:text-mint">
+                  Read case study <ArrowUpRight size={11} aria-hidden="true" />
+                </a>
+                <a href={AGRIGUARD_METRIC_CONFIG.destinations.timeline} className="inline-flex items-center gap-1.5 text-ink transition hover:text-mint">
+                  View on timeline <ArrowUpRight size={11} aria-hidden="true" />
+                </a>
+                <a
+                  href={AGRIGUARD_METRIC_CONFIG.destinations.repository}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex items-center gap-1.5 text-ink transition hover:text-mint"
+                >
+                  Repo <ArrowUpRight size={11} aria-hidden="true" />
+                </a>
+              </div>
+              <p className="font-mono text-[9px] text-faint">Public demo offline · repository available</p>
+            </div>
           </MetricCard>
 
           <MetricCard

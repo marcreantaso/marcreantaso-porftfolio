@@ -1,4 +1,12 @@
+"use client";
+
 import { ArrowRight, Braces, Cpu, Database, Lock, Wifi } from "lucide-react";
+import { useState } from "react";
+import { useReducedMotion } from "motion/react";
+import { cn } from "@/lib/utils";
+import { AGRIGUARD_METRIC_CONFIG } from "@/lib/data/agriguardMetric";
+
+const architectureIcons = { wifi: Wifi, cpu: Cpu, database: Database } as const;
 
 export function PipelineVisual() {
   const stages = [
@@ -48,55 +56,79 @@ export function PipelineVisual() {
 }
 
 export function TopologyVisual() {
+  const [activeNode, setActiveNode] = useState<string | null>(null);
+  const reduce = useReducedMotion();
+
   return (
-    <div className="rounded-xl border border-white/[0.07] bg-void/45 p-3">
-      <svg viewBox="0 0 300 96" className="w-full" role="img" aria-label="AgriGuard architecture: IoT devices to Vercel API to Neon Postgres, protected by JWT sessions">
-        <defs>
-          <linearGradient id="topology-line" x1="0" x2="1">
-            <stop offset="0%" stopColor="#10b981" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#00f0ff" stopOpacity="0.7" />
-          </linearGradient>
-        </defs>
+    <div
+      className="rounded-xl border border-white/[0.07] bg-void/45 p-3"
+      role="img"
+      aria-label="AgriGuard sends IoT readings to Vercel API routes for analysis and alerts, then persists field workflow data in Neon Postgres through Drizzle."
+    >
+      <div className="relative grid grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)_minmax(0,1fr)] items-center gap-2 pt-5 max-[479px]:grid-cols-1 max-[479px]:gap-0 max-[479px]:pt-0">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-1 left-[34%] right-[34%] top-0 rounded-lg border border-dashed border-mint/35 max-[479px]:bottom-auto max-[479px]:left-0 max-[479px]:right-0 max-[479px]:top-[calc(33.333%+1.5rem)] max-[479px]:h-[calc(33.333%+2.5rem)]"
+        >
+          <span className="absolute -top-4 left-2 bg-void/90 px-1 font-mono text-[8px] uppercase tracking-[0.12em] text-mint">
+            Single deployment surface
+          </span>
+        </div>
 
-        {[
-          { x: 12, y: 34, label: "IoT devices", sub: "readings", Icon: Wifi },
-          { x: 112, y: 18, label: "Vercel API", sub: "/api routes", Icon: Cpu },
-          { x: 212, y: 34, label: "Neon PG", sub: "Drizzle", Icon: Database },
-        ].map((node) => (
-          <g key={node.label}>
-            <rect
-              x={node.x}
-              y={node.y}
-              width="76"
-              height="42"
-              rx="8"
-              fill="rgba(255,255,255,0.025)"
-              stroke="rgba(255,255,255,0.09)"
-            />
-            <foreignObject x={node.x + 8} y={node.y + 7} width="60" height="30">
-              <div className="flex flex-col gap-0.5">
-                <span className="font-mono text-[8px] uppercase tracking-[0.08em] text-ink/85">
-                  {node.label}
-                </span>
-                <span className="font-mono text-[7px] uppercase tracking-[0.1em] text-faint">
-                  {node.sub}
-                </span>
+        {AGRIGUARD_METRIC_CONFIG.nodes.map((node, index) => {
+          const Icon = architectureIcons[node.icon];
+          const isActive = activeNode === node.id;
+          return (
+            <div key={node.id} className="relative flex items-center max-[479px]:flex-col">
+              <div
+                className={cn(
+                  "relative z-10 flex min-h-[68px] w-full max-w-[118px] flex-col justify-center rounded-lg border bg-white/[0.025] px-2.5 py-2 transition-colors duration-200 max-[479px]:max-w-none max-[479px]:px-3",
+                  isActive ? "border-mint/70 bg-mint/[0.09] shadow-[0_0_0_3px_rgba(16,185,129,0.10)]" : "border-white/[0.10]",
+                  node.id === "api" ? "mx-auto" : "",
+                )}
+              >
+                <Icon size={13} className={cn("mb-1 text-mint", isActive && "text-white")} aria-hidden="true" />
+                <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink/90">{node.title}</span>
+                <span className="font-mono text-[9px] uppercase tracking-[0.1em] text-faint">{node.subtitle}</span>
+                {node.id === "api" ? (
+                  <span className="mt-1.5 inline-flex w-fit items-center gap-1 rounded border border-mint/25 bg-mint/[0.06] px-1.5 py-0.5 font-mono text-[8px] text-mint">
+                    <Lock size={9} aria-hidden="true" />
+                    {AGRIGUARD_METRIC_CONFIG.auth}
+                  </span>
+                ) : null}
               </div>
-            </foreignObject>
-          </g>
+              {index < AGRIGUARD_METRIC_CONFIG.nodes.length - 1 ? (
+                <span
+                  aria-hidden="true"
+                  className="absolute left-[calc(100%+0.15rem)] right-[calc(-100%+0.15rem)] top-1/2 h-px border-t border-dashed border-mint/60 max-[479px]:bottom-[-1.25rem] max-[479px]:left-1/2 max-[479px]:right-auto max-[479px]:top-auto max-[479px]:h-5 max-[479px]:w-px max-[479px]:border-l max-[479px]:border-t-0"
+                  style={{ animation: reduce ? "none" : "flow 2.8s ease-in-out infinite" }}
+                >
+                  <span className="absolute right-0 top-1/2 -translate-y-1/2 border-y-[3px] border-l-[5px] border-y-transparent border-l-mint max-[479px]:bottom-0 max-[479px]:left-1/2 max-[479px]:right-auto max-[479px]:top-auto max-[479px]:-translate-x-1/2 max-[479px]:translate-y-0 max-[479px]:rotate-90" />
+                </span>
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-4 grid grid-cols-4 gap-1.5 border-t border-white/[0.06] pt-3 max-[479px]:grid-cols-2">
+        {AGRIGUARD_METRIC_CONFIG.steps.map((step) => (
+          <button
+            key={step.label}
+            type="button"
+            onMouseEnter={() => setActiveNode(step.node)}
+            onMouseLeave={() => setActiveNode(null)}
+            onFocus={() => setActiveNode(step.node)}
+            onBlur={() => setActiveNode(null)}
+            className={cn(
+              "rounded-md border border-white/[0.07] bg-white/[0.02] px-1.5 py-1.5 text-left font-mono text-[8px] uppercase leading-tight tracking-[0.08em] text-faint transition-colors hover:border-mint/45 hover:text-mint focus-visible:border-mint/60 focus-visible:text-mint",
+              activeNode === step.node && "border-mint/45 text-mint",
+            )}
+          >
+            {step.label}
+          </button>
         ))}
-
-        <path d="M88 55 H112 V39" fill="none" stroke="url(#topology-line)" strokeWidth="1" strokeDasharray="3 3" />
-        <path d="M188 39 V55 H212" fill="none" stroke="url(#topology-line)" strokeWidth="1" strokeDasharray="3 3" />
-
-        <circle cx="174" cy="70" r="2.5" fill="#10b981" />
-        <text x="182" y="73" className="fill-[#9aa3b2] font-mono" fontSize="7">
-          JWT session · bcrypt
-        </text>
-        <text x="12" y="16" className="fill-[#6b7383] font-mono" fontSize="7" letterSpacing="1.4">
-          SINGLE DEPLOYMENT SURFACE
-        </text>
-      </svg>
+      </div>
     </div>
   );
 }

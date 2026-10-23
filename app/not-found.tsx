@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Signal lost. 404",
+  title: "Marc",
   description: "This route diverged from the expected trajectory.",
 };
 
