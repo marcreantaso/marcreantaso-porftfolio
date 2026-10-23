@@ -205,7 +205,7 @@ export function BackgroundEngine() {
             );
           })}
         </div>
-        <p className="mt-2 hidden pl-1 font-mono text-[9px] tracking-[0.18em] text-faint/70 lg:block">
+        <p className="mt-2 hidden pl-1 font-mono text-[9px] tracking-[0.18em] text-faint/70 lg:block [@media(pointer:fine)]:block [@media(pointer:coarse)]:hidden">
           {active.label.toUpperCase()} · POINTER ACTIVE
         </p>
       </div>

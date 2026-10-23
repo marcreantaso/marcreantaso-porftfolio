@@ -308,7 +308,6 @@ export function FormulaWidget() {
       <div className="flex items-center justify-between gap-3 border-t border-white/[0.06] px-4 py-2.5">
         <span className="font-mono text-[9px] text-faint">{preset.note}</span>
         <label className="flex items-center gap-2">
-          <span className="sr-only">Inspect x coordinate</span>
           <input
             type="range"
             min={minX}

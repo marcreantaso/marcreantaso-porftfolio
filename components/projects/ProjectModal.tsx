@@ -7,7 +7,7 @@ import { ArrowUpRight, Trophy, X } from "lucide-react";
 import type { Project } from "@/lib/data/projects";
 import { GithubIcon } from "@/components/ui/BrandIcons";
 import { Tag } from "@/components/ui/Tag";
-import { cn } from "@/lib/utils";
+import { cn, withBasePath } from "@/lib/utils";
 import { ProjectVisual } from "./ProjectVisuals";
 
 const accentText = {
@@ -149,10 +149,10 @@ export function ProjectModal({
                   <Trophy size={14} className="mt-0.5 shrink-0 text-mint" aria-hidden="true" />
                   <div>
                     <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-mint">
-                      {project.award.split("—")[0].trim()}
+                      {project.award.split(":")[0].trim()}
                     </p>
                     <p className="mt-0.5 text-[11px] leading-snug text-muted">
-                      {project.award.split("—")[1]?.trim()}
+                      {project.award.split(":").slice(1).join(":").trim()}
                     </p>
                   </div>
                 </div>
@@ -163,7 +163,16 @@ export function ProjectModal({
               </p>
 
               <div className="mt-5 h-[160px]">
-                <ProjectVisual visual={project.visual} />
+                {project.preview ? (
+                  <img
+                    src={withBasePath(project.preview)}
+                    alt={`${project.title} preview`}
+                    decoding="async"
+                    className="h-full w-full rounded-xl border border-white/[0.07] object-cover object-top"
+                  />
+                ) : (
+                  <ProjectVisual visual={project.visual} />
+                )}
               </div>
 
               <div className="mt-5 grid grid-cols-3 gap-2">

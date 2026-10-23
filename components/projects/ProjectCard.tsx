@@ -11,7 +11,7 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 import type { Project } from "@/lib/data/projects";
 import { GithubIcon } from "@/components/ui/BrandIcons";
 import { Tag } from "@/components/ui/Tag";
-import { cn } from "@/lib/utils";
+import { cn, withBasePath } from "@/lib/utils";
 import { ProjectVisual } from "./ProjectVisuals";
 
 const accentText = {
@@ -43,7 +43,7 @@ export function ProjectCard({
   return (
     <motion.div
       ref={ref}
-      initial={reduce ? false : { opacity: 0, y: 26 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.12 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
@@ -110,7 +110,17 @@ export function ProjectCard({
         </p>
 
         <div className="mt-5 h-[132px] [&>div]:h-full">
-          <ProjectVisual visual={project.visual} />
+          {project.preview ? (
+            <img
+              src={withBasePath(project.preview)}
+              alt={`${project.title} preview`}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full rounded-xl border border-white/[0.07] object-cover object-top"
+            />
+          ) : (
+            <ProjectVisual visual={project.visual} />
+          )}
         </div>
 
         <div className="mt-4 flex flex-wrap gap-1.5">

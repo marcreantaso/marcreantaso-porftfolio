@@ -28,7 +28,7 @@ export function BentoGrid() {
               <span className="text-muted/80">not decoration.</span>
             </>
           }
-          description="A control panel for the systems, honors, and habits behind the interface. Every figure below is grounded in public repository behavior or a confirmed result — no benchmark theater."
+          description="A look at the systems, awards, and habits behind the interface. Every figure below comes from a public repository or a confirmed result. No made-up benchmarks."
         />
 
         <div className="mt-12 grid grid-cols-1 gap-3 md:grid-cols-6 lg:grid-cols-12">
@@ -66,7 +66,7 @@ export function BentoGrid() {
             delay={0.06}
             className="md:col-span-3 lg:col-span-7"
             title="Champion, built under pressure."
-            description="AgriGuard won the championship at The Great Flavor Byte. It unifies IoT readings, crop analysis, alerts, and field workflows behind authenticated, persistent data — delivered on a single deployment surface."
+            description="AgriGuard won the championship at The Great Flavor Byte. It brings IoT readings, crop analysis, alerts, and field workflows together in one authenticated application."
             footer={
               <>
                 <span className="inline-flex items-center gap-1.5 text-mint">
@@ -90,10 +90,10 @@ export function BentoGrid() {
             delay={0.1}
             className="md:col-span-3 lg:col-span-3"
             title="Macro before mechanics."
-            description="MLBB roamer for Team Falcons Academy — BEAR ESPORTS MAIN, TSP FALCONS and NO DOUBT EPRO — plus PnC Esports. I read map state, allocate pressure, and commit before the window closes."
+            description="I play MLBB as a roamer for Player, BEAR ESPORTS MAIN, TSP FALCONS, and NO DOUBT EPRO, plus PnC Esports. I read the map, manage pressure, and make decisions quickly."
             footer={
               <>
-                <span>Team Falcons Academy</span>
+                <span>Player</span>
                 <span>PnC Esports</span>
               </>
             }

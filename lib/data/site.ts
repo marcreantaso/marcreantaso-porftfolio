@@ -3,11 +3,11 @@ export const site = {
   displayName: "Marc Reantaso",
   firstName: "Marc",
   initials: "MR",
-  role: "Full-Stack Software Engineer & CS Student",
+  role: "Computer Science Student",
   tagline:
-    "Bridging algorithmic rigor, mathematical elegance, and high-performance software engineering.",
+    "I like building software that is thoughtful, useful, and easy to understand.",
   description:
-    "Full-stack software engineer and BS Computer Science student at Pamantasan ng Cabuyao. I build compiler pipelines, offline-first PWAs, precision AgTech platforms, and mathematically considered interfaces.",
+    "I am a full-stack software engineer and BS Computer Science student at Pamantasan ng Cabuyao. I build compiler tools, offline-first PWAs, precision AgTech platforms, and interfaces with a strong focus on detail.",
   email: "reantasomarcgian@gmail.com",
   location: "Cabuyao, Laguna, Philippines",
   school: "Pamantasan ng Cabuyao",

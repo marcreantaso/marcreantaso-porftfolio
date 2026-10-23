@@ -113,7 +113,7 @@ export function ContactSection() {
   };
 
   const openMailto = (payload: Values) => {
-    const subject = `Portfolio contact — ${payload.name.trim()}`;
+    const subject = `Portfolio contact: ${payload.name.trim()}`;
     const body = [
       `Name: ${payload.name.trim()}`,
       `Email: ${payload.email.trim()}`,
@@ -158,7 +158,7 @@ export function ContactSection() {
           name: values.name.trim(),
           email: values.email.trim(),
           message: values.message.trim(),
-          _subject: `Portfolio contact — ${values.name.trim()}`,
+          _subject: `Portfolio contact: ${values.name.trim()}`,
         }),
       });
 
@@ -197,7 +197,7 @@ export function ContactSection() {
                 <span className="text-muted/80">channel.</span>
               </>
             }
-            description="Internships, collaborations, or a hard systems problem — send a message through the relay or reach out directly. The form works without a backend by falling back to your mail client."
+            description="Have an internship opportunity, a collaboration idea, or a difficult systems problem? Send a message through the relay or reach out directly. The form also works without a backend by opening your mail client."
           />
 
           <Reveal delay={0.1} className="shrink-0">

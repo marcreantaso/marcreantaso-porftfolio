@@ -80,7 +80,7 @@ export function Navbar() {
           aria-label="Primary"
           className="mx-auto flex h-16 w-full max-w-[86rem] items-center justify-between gap-4 px-5 sm:px-8"
         >
-          <Link href="/" className="group flex items-center gap-3" aria-label={`${site.name} — home`}>
+          <Link href="/" className="group flex items-center gap-3" aria-label={`${site.name} home`}>
             <span className="text-neon transition-transform duration-500 group-hover:rotate-45">
               <PhiMark className="h-8 w-8" />
             </span>
@@ -106,9 +106,6 @@ export function Navbar() {
                     isActive ? "text-ink" : "text-muted hover:text-ink",
                   )}
                 >
-                  <span className="mr-1.5 font-mono text-[9px] text-faint/70 group-hover:text-neon">
-                    {item.index}
-                  </span>
                   {item.label}
                   {isActive ? (
                     <motion.span
@@ -140,7 +137,6 @@ export function Navbar() {
               Let&apos;s talk
               <ArrowUpRight size={13} />
             </a>
-
             <button
               type="button"
               onClick={() => setOpen((value) => !value)}
@@ -184,10 +180,7 @@ export function Navbar() {
                     onClick={() => setOpen(false)}
                     className="flex items-center justify-between rounded-xl px-3 py-3.5 text-sm text-ink transition hover:bg-white/[0.04]"
                   >
-                    <span className="flex items-center gap-3">
-                      <span className="font-mono text-[10px] text-neon">{item.index}</span>
-                      {item.label}
-                    </span>
+                    <span>{item.label}</span>
                     <ArrowUpRight size={14} className="text-faint" />
                   </a>
                 ))}

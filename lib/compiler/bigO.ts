@@ -205,7 +205,7 @@ export function analyzeComplexity(program: Program): ComplexityAnalysis {
 
   const notes: string[] = [];
   if (loops === 0 && !recursive) {
-    notes.push("No loops or recursive calls — the body runs in constant time.");
+    notes.push("No loops or recursive calls. The body runs in constant time.");
   }
   if (loops > 0) {
     notes.push(

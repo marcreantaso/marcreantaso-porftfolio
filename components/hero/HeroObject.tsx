@@ -1,6 +1,6 @@
 "use client";
 
-import { Component, type ReactNode, useEffect, useMemo, useState } from "react";
+import { Component, type ReactNode, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useReducedMotion } from "motion/react";
 
@@ -69,6 +69,7 @@ export function HeroObject() {
     } catch {
       setWebgl(false);
     }
+
   }, []);
 
   return (

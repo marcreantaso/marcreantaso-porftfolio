@@ -41,7 +41,7 @@ export function Certifications() {
                 <span className="text-muted/80">proof of work.</span>
               </>
             }
-            description="Certificates from Cisco Networking Academy, AWS, Udemy, Wadhwani Foundation, and TED-Ed. Every card opens the original certificate — no badge walls without receipts."
+            description="Certificates from Cisco Networking Academy, AWS, Udemy, Wadhwani Foundation, and TED-Ed. Every card opens the original certificate, so you can check the source yourself."
           />
 
           <Reveal delay={0.1} className="shrink-0">

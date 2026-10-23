@@ -2,7 +2,7 @@
   "name": "marcreantaso-portfolio",
   "version": "2.0.0",
   "private": true,
-  "description": "Advanced & Mathematical Design Portfolio — Marc Gian R. Reantaso",
+  "description": "Marc Gian R. Reantaso portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

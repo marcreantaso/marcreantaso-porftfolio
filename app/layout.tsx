@@ -28,13 +28,13 @@ const ogImage = {
   width: 1200,
   height: 630,
   type: "image/png",
-  alt: "Marc Gian R. Reantaso — Where logic meets geometry",
+  alt: "Marc Gian R. Reantaso. Where logic meets geometry.",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.siteUrl),
   title: {
-    default: "Marc Gian R. Reantaso — Where Logic Meets Geometry",
+    default: "Marc Gian R. Reantaso. Where Logic Meets Geometry",
     template: "%s · Marc Gian R. Reantaso",
   },
   description: site.description,
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: canonical,
-    title: "Marc Gian R. Reantaso — Where Logic Meets Geometry",
+    title: "Marc Gian R. Reantaso. Where Logic Meets Geometry",
     description: site.description,
     siteName: site.name,
     locale: "en_PH",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marc Gian R. Reantaso — Where Logic Meets Geometry",
+    title: "Marc Gian R. Reantaso. Where Logic Meets Geometry",
     description: site.description,
     images: [ogImage.url],
   },
@@ -111,7 +111,7 @@ const personSchema = {
     "Precision agriculture IoT",
   ],
   sameAs: [site.github, site.linkedin, site.facebook],
-  award: `${site.award.placement} — ${site.award.title}`,
+  award: `${site.award.placement}: ${site.award.title}`,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

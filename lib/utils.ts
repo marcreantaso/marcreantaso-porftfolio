@@ -20,5 +20,5 @@ export function clamp(value: number, min: number, max: number): number {
 }
 
 export function formatNumber(value: number, digits = 3): string {
-  return Number.isFinite(value) ? value.toFixed(digits) : "—";
+  return Number.isFinite(value) ? value.toFixed(digits) : "N/A";
 }

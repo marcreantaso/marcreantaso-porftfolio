@@ -31,7 +31,7 @@ export function Hero() {
     <section id="home" className="relative">
       <div className="mx-auto w-full max-w-[86rem] px-5 pb-16 pt-24 sm:px-8 sm:pt-28 lg:pt-32">
         <motion.div
-          initial={reduce ? false : "hidden"}
+          initial={false}
           animate={reduce ? false : "show"}
           variants={container}
           className="grid gap-12 lg:grid-cols-[1.618fr_1fr] lg:items-center lg:gap-14"
@@ -57,14 +57,14 @@ export function Hero() {
               variants={item}
               className="mt-7 max-w-xl text-fluid-lg leading-relaxed text-muted"
             >
-              I&apos;m <span className="font-medium text-ink">{site.name}</span> — a full-stack
-              software engineer and CS student bridging algorithmic rigor, mathematical elegance, and
-              high-performance systems.
+              I&apos;m <span className="font-medium text-ink">{site.name}</span>, a full-stack
+              software engineer and CS student who enjoys building reliable systems and clean
+              interfaces.
             </motion.p>
 
             <motion.p variants={item} className="mt-4 max-w-xl text-sm leading-relaxed text-muted/85">
-              I build compiler pipelines, offline-first PWAs, and precision AgTech platforms — then
-              wrap them in interfaces that treat mathematics as a design material.
+              I build compiler tools, offline-first PWAs, and precision AgTech platforms. I also enjoy
+              turning complex ideas into interfaces people can actually use.
             </motion.p>
 
             <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
@@ -110,7 +110,7 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: 18 }}
+          initial={false}
           animate={reduce ? false : { opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
           className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.04] sm:grid-cols-3 lg:mt-20"

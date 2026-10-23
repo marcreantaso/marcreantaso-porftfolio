@@ -45,7 +45,7 @@ DISPLAY "gcd =", a`,
   {
     id: "halving",
     label: "log n",
-    description: "A loop that halves its state — logarithmic growth.",
+    description: "A loop that halves its state with logarithmic growth.",
     code: `SET n TO 1024
 SET steps TO 0
 WHILE n > 1 DO
@@ -69,7 +69,7 @@ DISPLAY "phi approx =", (1 + 5 ^ 0.5) / 2`,
   {
     id: "factorial",
     label: "recursion",
-    description: "A recursive factorial — the analyzer flags the self-call.",
+    description: "A recursive factorial where the analyzer flags the self-call.",
     code: `FUNCTION factorial(n)
   IF n <= 1 THEN
     RETURN 1

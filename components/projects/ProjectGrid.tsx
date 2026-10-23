@@ -6,6 +6,7 @@ import { additionalProjects, projects, type Project } from "@/lib/data/projects"
 import { GithubIcon } from "@/components/ui/BrandIcons";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { withBasePath } from "@/lib/utils";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectModal } from "./ProjectModal";
 
@@ -19,21 +20,21 @@ export function ProjectGrid() {
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
             index="01"
-            eyebrow="Featured engineering systems"
+            eyebrow="A few things I have built"
             title={
               <>
-                Case studies,
+                Projects I have worked on,
                 <br />
-                <span className="text-muted/80">not screenshots.</span>
+                <span className="text-muted/80">with the details included.</span>
               </>
             }
-            description="Four systems spanning compiler tooling, precision agriculture, explainable career modeling, and offline-first civic software. Open a card for the decisions, constraints, and architecture behind it."
+            description="These projects cover programming education, farming tools, career planning, and waste collection. Open a card to see what I built, how it works, and what I learned along the way."
           />
 
           <Reveal delay={0.1} className="shrink-0">
             <div className="flex items-center gap-3 rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-faint">
               <span className="h-1.5 w-1.5 rounded-full bg-mint" aria-hidden="true" />
-              4 case studies · 2 live
+              4 projects · 2 live
             </div>
           </Reveal>
         </div>
@@ -65,6 +66,15 @@ export function ProjectGrid() {
                   className="group flex items-start justify-between gap-4 rounded-xl border border-white/[0.06] bg-void/40 p-4 transition hover:border-neon/25 hover:bg-white/[0.025]"
                 >
                   <div>
+                    {project.preview ? (
+                      <img
+                        src={withBasePath(project.preview)}
+                        alt={`${project.name} preview`}
+                        loading="lazy"
+                        decoding="async"
+                        className="mb-4 h-28 w-full rounded-lg border border-white/[0.07] object-cover object-top"
+                      />
+                    ) : null}
                     <div className="flex items-center gap-2">
                       <p className="text-sm font-medium text-ink">{project.name}</p>
                       <span className="rounded border border-white/[0.07] px-1.5 py-0.5 font-mono text-[8px] uppercase tracking-[0.1em] text-faint">

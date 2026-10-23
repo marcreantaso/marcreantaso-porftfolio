@@ -273,6 +273,7 @@ export function Sandbox() {
   const [selectedPythonLine, setSelectedPythonLine] = useState<number | null>(null);
   const [copied, setCopied] = useState(false);
   const [announcement, setAnnouncement] = useState("");
+  const [mounted, setMounted] = useState(false);
 
   const deferredSource = useDeferredValue(source);
   const result = useMemo(() => compile(deferredSource), [deferredSource]);
@@ -287,6 +288,10 @@ export function Sandbox() {
   const copyTimer = useRef<number | null>(null);
 
   const lineCount = source.split("\n").length;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     setSelectedPythonLine(null);
@@ -337,7 +342,7 @@ export function Sandbox() {
         tokens: `${result.stats.tokens}`,
         analysis: result.analysis.label,
       }
-    : { python: "—", ast: "—", tokens: "—", analysis: "—" };
+    : { python: "N/A", ast: "N/A", tokens: "N/A", analysis: "N/A" };
 
   return (
     <section id="sandbox" className="relative scroll-mt-24 py-24 sm:py-28">
@@ -643,19 +648,21 @@ export function Sandbox() {
           <div className="flex flex-wrap items-center justify-between gap-x-5 gap-y-2 border-t border-white/[0.07] px-4 py-2.5 font-mono text-[9px] uppercase tracking-[0.12em] text-faint">
             <div className="flex flex-wrap gap-x-5 gap-y-1">
               <span>
-                tokens <span className="text-ink/80">{result.ok ? result.stats.tokens : "—"}</span>
+                tokens <span className="text-ink/80">{result.ok ? result.stats.tokens : "N/A"}</span>
               </span>
               <span>
-                statements <span className="text-ink/80">{result.ok ? result.stats.statements : "—"}</span>
+                statements <span className="text-ink/80">{result.ok ? result.stats.statements : "N/A"}</span>
               </span>
               <span>
                 complexity{" "}
-                <span className="text-mint">{result.ok ? result.analysis.label : "—"}</span>
+                <span className="text-mint">{result.ok ? result.analysis.label : "N/A"}</span>
               </span>
               <span>
                 compiled{" "}
                 <span className="text-ink/80">
-                  {(result.ok ? result.stats.durationMs : result.durationMs).toFixed(1)}ms
+                  {mounted
+                    ? `${(result.ok ? result.stats.durationMs : result.durationMs).toFixed(1)}ms`
+                    : "N/A"}
                 </span>
               </span>
             </div>

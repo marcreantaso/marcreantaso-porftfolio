@@ -27,6 +27,7 @@ export interface Project {
   links: ProjectLink[];
   accent: "neon" | "mint" | "plasma";
   visual: ProjectVisual;
+  preview?: string;
   caseStudy: CaseStudy;
   featured: boolean;
 }
@@ -38,11 +39,11 @@ export const projects: Project[] = [
     title: "PseudoPy",
     subtitle: "Pseudocode → Python translation engine & offline-first PWA",
     description:
-      "A rule-based translation pipeline that turns pseudocode into executable Python, runs it in the browser through Skulpt, and returns structural feedback — installable and functional without a connection.",
+      "A rule-based translation pipeline that turns pseudocode into executable Python, runs it in the browser through Skulpt, and returns structural feedback. It is installable and works without a connection.",
     stack: ["Vanilla JS", "Skulpt", "Service Worker", "IndexedDB", "PWA"],
     highlights: [
       "Rule-based converter for IF/ELSE, FOR, WHILE, FUNCTION, SET and DISPLAY",
-      "In-browser Python execution via Skulpt — no server round-trip",
+      "In-browser Python execution via Skulpt, with no server round-trip",
       "Structure, syntax-balance and quality feedback for learners",
       "Student, instructor and admin dashboards with exercise management",
       "Installable on Android and iOS with offline caching",
@@ -58,6 +59,7 @@ export const projects: Project[] = [
     ],
     accent: "neon",
     visual: "pipeline",
+    preview: "/images/projects/pseudopy.png",
     featured: true,
     caseStudy: {
       problem:
@@ -91,7 +93,7 @@ export const projects: Project[] = [
     subtitle: "Precision-agriculture IoT platform · Hackathon champion",
     description:
       "A mobile-first agricultural IoT dashboard covering crop analysis, sensor monitoring, alerts, analytics and field workflows, rebuilt on a single Vercel deployment with authenticated, persistent data.",
-    award: "Champion — The Great Flavor Byte: ACCS × Lucky Me Idea Noodling Competition",
+    award: "Champion: The Great Flavor Byte: ACCS × Lucky Me Idea Noodling Competition",
     stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Vercel Functions", "Neon Postgres", "Drizzle ORM", "JWT"],
     highlights: [
       "Sensor monitoring, crop analysis and alert workflows in one field dashboard",
@@ -111,6 +113,7 @@ export const projects: Project[] = [
     ],
     accent: "mint",
     visual: "topology",
+    preview: "/images/projects/agriguard.png",
     featured: true,
     caseStudy: {
       problem:
@@ -143,7 +146,7 @@ export const projects: Project[] = [
     title: "CaDeT",
     subtitle: "Career digital twin with an explainable alignment model",
     description:
-      "A local-first career development tracker that scores how saved goals, skills, projects and experience align with a target path — with published weights and a what-if simulator that never mutates real records.",
+      "A local-first career development tracker that scores how saved goals, skills, projects and experience align with a target path. It includes published weights and a what-if simulator that never changes real records.",
     stack: ["React", "TypeScript", "Vite", "Dexie", "IndexedDB", "Vitest"],
     highlights: [
       "Weighted alignment model: skills 40%, project evidence 25%, experience 15%, ACTOR progress 10%, declared intent 10%",
@@ -163,6 +166,7 @@ export const projects: Project[] = [
     ],
     accent: "plasma",
     visual: "weights",
+    preview: "/images/projects/cadet.png",
     featured: true,
     caseStudy: {
       problem:
@@ -212,6 +216,7 @@ export const projects: Project[] = [
     links: [{ label: "Repository", href: "https://github.com/marcreantaso/WasteLink-PH" }],
     accent: "mint",
     visual: "offline",
+    preview: "/images/projects/wastelink.png",
     featured: true,
     caseStudy: {
       problem:
@@ -239,7 +244,24 @@ export const projects: Project[] = [
   },
 ];
 
-export const additionalProjects = [
+export interface AdditionalProject {
+  name: string;
+  kind: string;
+  description: string;
+  href: string;
+  meta: string;
+  preview?: string;
+}
+
+export const additionalProjects: AdditionalProject[] = [
+  {
+    name: "GIAN",
+    kind: "Personal finance",
+    description: "Personal finance and net-worth tracking application.",
+    href: "https://gianwealth.vercel.app/",
+    meta: "Finance · Web app",
+    preview: "/images/projects/gian.png",
+  },
   {
     name: "Scheduler",
     kind: "TypeScript PWA",
