@@ -1,0 +1,125 @@
+import { Trophy } from "lucide-react";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { MetricCard } from "./MetricCard";
+import { ComplexityChart } from "./ComplexityChart";
+import { DecisionVisual, PipelineVisual, SignalVisual, TopologyVisual } from "./visuals";
+import { site } from "@/lib/data/site";
+
+function Stat({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-2.5 py-2">
+      <p className="tabular font-mono text-[13px] text-ink">{value}</p>
+      <p className="mt-0.5 font-mono text-[8px] uppercase tracking-[0.12em] text-faint">{label}</p>
+    </div>
+  );
+}
+
+export function BentoGrid() {
+  return (
+    <section id="metrics" className="relative scroll-mt-24 py-24 sm:py-28">
+      <div className="mx-auto w-full max-w-[86rem] px-5 sm:px-8">
+        <SectionHeading
+          index="02"
+          eyebrow="Metrics & core strengths"
+          title={
+            <>
+              Operating principles,
+              <br />
+              <span className="text-muted/80">not decoration.</span>
+            </>
+          }
+          description="A control panel for the systems, honors, and habits behind the interface. Every figure below is grounded in public repository behavior or a confirmed result — no benchmark theater."
+        />
+
+        <div className="mt-12 grid grid-cols-1 gap-3 md:grid-cols-6 lg:grid-cols-12">
+          <MetricCard
+            index="01"
+            kicker="algorithmic precision"
+            accent="neon"
+            className="md:col-span-3 lg:col-span-5 lg:row-span-2"
+            title="Parsers that explain themselves."
+            description="PseudoPy translates pseudocode into executable Python through a rule-based pipeline, then runs a separate analysis pass for structure and syntax balance. The same discipline powers the sandbox below."
+            footer={
+              <>
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-neon" aria-hidden="true" />
+                  static analysis
+                </span>
+                <span>offline-first</span>
+              </>
+            }
+          >
+            <div className="space-y-3">
+              <PipelineVisual />
+              <div className="grid grid-cols-2 gap-2">
+                <Stat value="O(n)" label="single-pass lexing" />
+                <Stat value="7+" label="supported constructs" />
+              </div>
+              <SignalVisual />
+            </div>
+          </MetricCard>
+
+          <MetricCard
+            index="02"
+            kicker="hackathon champion"
+            accent="mint"
+            delay={0.06}
+            className="md:col-span-3 lg:col-span-7"
+            title="Champion, built under pressure."
+            description="AgriGuard won the championship at The Great Flavor Byte. It unifies IoT readings, crop analysis, alerts, and field workflows behind authenticated, persistent data — delivered on a single deployment surface."
+            footer={
+              <>
+                <span className="inline-flex items-center gap-1.5 text-mint">
+                  <Trophy size={11} aria-hidden="true" /> Champion
+                </span>
+                <span>4 relational tables</span>
+                <span className="hidden sm:inline">1 deployment</span>
+              </>
+            }
+          >
+            <TopologyVisual />
+            <p className="mt-3 font-mono text-[9px] leading-relaxed text-faint">
+              ACCS × Lucky Me Idea Noodling Competition · {site.award.project}
+            </p>
+          </MetricCard>
+
+          <MetricCard
+            index="03"
+            kicker="tactical mindset"
+            accent="plasma"
+            delay={0.1}
+            className="md:col-span-3 lg:col-span-3"
+            title="Macro before mechanics."
+            description="MLBB roamer for Team Falcons Academy — BEAR ESPORTS MAIN, TSP FALCONS and NO DOUBT EPRO — plus PnC Esports. I read map state, allocate pressure, and commit before the window closes."
+            footer={
+              <>
+                <span>Team Falcons Academy</span>
+                <span>PnC Esports</span>
+              </>
+            }
+          >
+            <DecisionVisual />
+          </MetricCard>
+
+          <MetricCard
+            index="04"
+            kicker="math & code efficiency"
+            accent="neon"
+            delay={0.14}
+            className="md:col-span-3 lg:col-span-4"
+            title="Complexity, made visible."
+            description="Key lookups stay O(1), lexing is O(n), sorting is O(n log n), and nested scans are O(n²). The sandbox below derives a heuristic class from your loop structure."
+            footer={
+              <>
+                <span>heuristic model</span>
+                <span className="text-faint/70">not a benchmark</span>
+              </>
+            }
+          >
+            <ComplexityChart />
+          </MetricCard>
+        </div>
+      </div>
+    </section>
+  );
+}
