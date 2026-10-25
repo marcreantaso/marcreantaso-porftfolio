@@ -7,3 +7,6 @@ next-env.d.ts
 .env*.local
 .DS_Store
 Thumbs.db
+
+# CV render artifacts (keep the PDF, ignore the preview)
+documents/cv/preview.png

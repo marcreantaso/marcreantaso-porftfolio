@@ -14,6 +14,9 @@ export interface Certification {
 export const credentialsFolder =
   "https://drive.google.com/drive/folders/1AT3UlRhI-XjQyQSPWYO1AzwpqOTYdCtJ";
 
+export const academicFolder =
+  "https://drive.google.com/drive/folders/1-LpYbrcrrEj5F4GGqieDo8NyQF0sC5nR";
+
 export const certifications: Certification[] = [
   {
     id: "aws-ec2",

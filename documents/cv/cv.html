@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Marc Gian R. Reantaso — Curriculum Vitae</title>
+    <meta name="author" content="Marc Gian R. Reantaso" />
+    <meta
+      name="description"
+      content="Curriculum vitae of Marc Gian R. Reantaso, BS Computer Science student and software engineer."
+    />
+    <style>
+      :root {
+        --ink: #101010;
+        --muted: #565656;
+        --rule: #b4b4b4;
+        --hair: #d6d6d6;
+      }
+
+      @page {
+        size: A4;
+        margin: 15mm 15mm 13mm;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        margin: 0;
+        font-family: Calibri, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        font-size: 9.8pt;
+        line-height: 1.34;
+        color: var(--ink);
+        /* Keep extractable text as plain characters: no fi/fl ligature glyphs. */
+        font-variant-ligatures: none;
+        font-feature-settings: "liga" 0, "clig" 0;
+      }
+
+      /* On screen the document is shown at true A4 width so print and preview match. */
+      @media screen {
+        body {
+          width: 210mm;
+          margin: 0 auto;
+          padding: 15mm 15mm 13mm;
+          background: #fff;
+        }
+      }
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: #b8b8b8;
+        text-underline-offset: 1.5px;
+      }
+
+      /* ---------- header ---------- */
+
+      .cv-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 8mm;
+        padding-bottom: 3.2mm;
+        border-bottom: 1.4pt solid var(--ink);
+      }
+
+      .cv-header h1 {
+        margin: 0;
+        font-size: 21.5pt;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        line-height: 1.1;
+      }
+
+      .cv-header .role {
+        margin: 1.4mm 0 0;
+        font-size: 10.4pt;
+        color: var(--muted);
+      }
+
+      .contact {
+        margin: 2.4mm 0 0;
+        font-size: 9.2pt;
+        line-height: 1.55;
+        white-space: nowrap;
+      }
+
+      .contact .sep {
+        color: var(--muted);
+        margin: 0 1mm;
+      }
+
+      .portrait {
+        flex: 0 0 auto;
+        width: 26mm;
+        height: 26mm;
+        object-fit: cover;
+        object-position: center 22%;
+        border: 0.6pt solid var(--rule);
+        border-radius: 1.2mm;
+      }
+
+      /* ---------- sections ---------- */
+
+      h2 {
+        margin: 5.2mm 0 2.2mm;
+        padding-bottom: 1.1mm;
+        border-bottom: 0.7pt solid var(--rule);
+        font-size: 9.6pt;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      h2:first-of-type {
+        margin-top: 4.4mm;
+      }
+
+      p {
+        margin: 0 0 1.6mm;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        orphans: 2;
+        widows: 2;
+      }
+
+      ul {
+        margin: 1mm 0 0;
+        padding-left: 4.4mm;
+      }
+
+      li {
+        margin: 0 0 0.7mm;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      li::marker {
+        color: #7a7a7a;
+      }
+
+      /* ---------- skills ---------- */
+
+      .skill {
+        margin: 0 0 1.1mm;
+        padding-left: 30mm;
+        text-indent: -30mm;
+      }
+
+      .skill .k {
+        display: inline-block;
+        width: 29mm;
+        text-indent: 0;
+        font-weight: 700;
+      }
+
+      /* ---------- entries ---------- */
+
+      .entry {
+        margin: 0 0 3mm;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .entry-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 4mm;
+      }
+
+      .entry-head h3 {
+        margin: 0;
+        font-size: 10.2pt;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      .entry-head .dash {
+        font-weight: 400;
+        color: var(--muted);
+      }
+
+      .entry-head .sub {
+        font-weight: 400;
+        color: #2c2c2c;
+      }
+
+      .links {
+        flex: 0 0 auto;
+        font-size: 8.9pt;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .meta {
+        margin: 0.5mm 0 1mm;
+        font-size: 8.9pt;
+        font-style: italic;
+        color: var(--muted);
+      }
+
+      .stack {
+        margin: 0.6mm 0 0;
+        font-size: 8.9pt;
+        color: var(--muted);
+      }
+
+      .compact {
+        margin: 0 0 1.4mm;
+        padding-left: 30mm;
+        text-indent: -30mm;
+      }
+
+      .compact .k {
+        display: inline-block;
+        width: 29mm;
+        text-indent: 0;
+        font-weight: 700;
+      }
+
+      /* ---------- education / awards ---------- */
+
+      .edu-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 4mm;
+      }
+
+      .edu-head h3 {
+        margin: 0;
+        font-size: 10.2pt;
+        font-weight: 700;
+      }
+
+      .edu-head .when {
+        flex: 0 0 auto;
+        font-size: 9pt;
+        color: var(--muted);
+      }
+
+      .award-line {
+        margin: 0 0 1.2mm;
+      }
+
+      .award-line .what {
+        font-weight: 700;
+      }
+
+      /* ---------- certifications ---------- */
+
+      .cert-group {
+        margin: 0 0 2mm;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .cert-group h3 {
+        margin: 0 0 0.6mm;
+        font-size: 9.6pt;
+        font-weight: 700;
+      }
+
+      .cert-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .cert-list li {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 4mm;
+        margin: 0 0 0.4mm;
+        font-size: 9.3pt;
+      }
+
+      .cert-list .date {
+        flex: 0 0 auto;
+        font-size: 8.8pt;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .note {
+        margin-top: 1.6mm;
+        font-size: 8.8pt;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="cv-header">
+      <div class="identity">
+        <h1>Marc Gian R. Reantaso</h1>
+        <p class="role">BS Computer Science Student &middot; Software Engineer</p>
+        <p class="contact">
+          Cabuyao, Laguna, Philippines <span class="sep">&middot;</span>
+          <a href="tel:+639915446117">0991 544 6117</a><br />
+          <a href="mailto:reantasomarcgian@gmail.com">reantasomarcgian@gmail.com</a>
+          <span class="sep">&middot;</span>
+          <a href="https://marcreantaso.github.io/marcreantaso-porftfolio/"
+            >marcreantaso.github.io</a
+          ><br />
+          <a href="https://github.com/marcreantaso">github.com/marcreantaso</a>
+          <span class="sep">&middot;</span>
+          <a href="https://www.linkedin.com/in/marc-gian-reantaso-88a3b6381"
+            >linkedin.com/in/marc-gian-reantaso</a
+          >
+        </p>
+      </div>
+      <img
+        class="portrait"
+        src="../../public/images/portrait.jpg"
+        alt="Portrait of Marc Gian R. Reantaso"
+      />
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p>
+        Computer Science student at Pamantasan ng Cabuyao who ships production web systems alongside
+        coursework. Built a browser-based pseudocode-to-Python compiler that runs entirely on the
+        client, a precision-agriculture IoT platform that won the ACCS &times; Lucky Me idea
+        competition, and two local-first applications designed to keep working without a connection.
+        Comfortable owning a feature end to end, from data model and API design through deployment
+        and testing.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <p class="skill">
+        <span class="k">Languages</span>TypeScript, JavaScript (ES2022), Java, Python, SQL,
+        HTML/CSS
+      </p>
+      <p class="skill">
+        <span class="k">Frontend</span>React 18/19, Next.js (App Router), Vite, Tailwind CSS 4,
+        Motion, React Three Fiber
+      </p>
+      <p class="skill">
+        <span class="k">Backend &amp; data</span>Node.js, Vercel serverless functions, PostgreSQL
+        (Neon), Drizzle ORM, REST APIs, JWT sessions, bcrypt
+      </p>
+      <p class="skill">
+        <span class="k">Offline &amp; storage</span>IndexedDB, Dexie, Service Workers, progressive
+        web app installability
+      </p>
+      <p class="skill">
+        <span class="k">Tooling &amp; quality</span>Git, GitHub Actions, Vitest, ESLint, TypeScript
+        strict mode, Vercel
+      </p>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>
+            PseudoPy <span class="dash">&mdash;</span>
+            <span class="sub">Pseudocode &rarr; Python translation engine and offline-first PWA</span>
+          </h3>
+          <span class="links"
+            ><a href="https://www.pseudopy.me/">pseudopy.me</a> &middot;
+            <a href="https://github.com/marcreantaso/PseudoPy">code</a></span
+          >
+        </div>
+        <p class="stack">
+          Vanilla JavaScript &middot; Skulpt &middot; Service Worker &middot; IndexedDB &middot; PWA
+        </p>
+        <ul>
+          <li>
+            Wrote a deterministic translator for IF/ELSE, FOR, WHILE, FUNCTION, SET and DISPLAY that
+            fails with actionable diagnostics rather than silent miscompiles.
+          </li>
+          <li>
+            Moved Python execution into the browser with Skulpt, removing the server round-trip and
+            keeping the tool usable with no connection.
+          </li>
+          <li>
+            Separated translation, structural analysis and persistence so feedback can fail
+            independently, behind student, instructor and admin dashboards.
+          </li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>
+            AgriGuard <span class="dash">&mdash;</span>
+            <span class="sub">Precision-agriculture IoT platform</span>
+          </h3>
+          <span class="links"
+            ><a href="https://github.com/marcreantaso/AgriGuard">code</a></span
+          >
+        </div>
+        <p class="stack">
+          React &middot; TypeScript &middot; Vite &middot; Tailwind CSS &middot; Vercel Functions
+          &middot; Neon PostgreSQL &middot; Drizzle ORM &middot; JWT
+        </p>
+        <ul>
+          <li>
+            Won the ACCS &times; Lucky Me Idea Noodling Competition with a mobile-first dashboard
+            covering sensor monitoring, crop analysis and field alerts.
+          </li>
+          <li>
+            Modeled users, IoT devices, sensor readings and alerts as four relational tables with
+            Drizzle migrations and seed data.
+          </li>
+          <li>
+            Secured sessions with bcrypt hashes and HTTP-only JWT cookies, and consolidated the API
+            and client into a single Vercel deployment.
+          </li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>
+            CaDeT <span class="dash">&mdash;</span>
+            <span class="sub">Career digital twin with an explainable alignment model</span>
+          </h3>
+          <span class="links"
+            ><a href="https://cadetorg.vercel.app/">cadetorg.vercel.app</a> &middot;
+            <a href="https://github.com/marcreantaso/CaDeT">code</a></span
+          >
+        </div>
+        <p class="stack">
+          React &middot; TypeScript &middot; Vite &middot; Dexie &middot; IndexedDB &middot; Vitest
+        </p>
+        <ul>
+          <li>
+            Designed a transparent five-signal scoring model (skills 40%, project evidence 25%,
+            experience 15%, ACTOR progress 10%, declared intent 10%) with each contribution rendered
+            in the interface.
+          </li>
+          <li>
+            Isolated the what-if simulator on a temporary copy of user data; an accepted simulation
+            is promoted atomically into a real 14-day experiment with tasks, events and stage
+            transitions.
+          </li>
+          <li>
+            Kept the app local-first on IndexedDB with no account required, with workflow behaviour
+            covered by Vitest.
+          </li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>
+            WasteLink PH <span class="dash">&mdash;</span>
+            <span class="sub">Offline-first PWA for informal waste pickers</span>
+          </h3>
+          <span class="links"
+            ><a href="https://github.com/marcreantaso/WasteLink-PH">code</a></span
+          >
+        </div>
+        <p class="stack">React 18 &middot; Vite &middot; IndexedDB &middot; Service Worker &middot; PWA</p>
+        <ul>
+          <li>
+            Built the data path around a custom service worker and IndexedDB so field records survive
+            intermittent connectivity instead of blocking on a network call.
+          </li>
+          <li>
+            Designed a thumb-first, safe-area-aware mobile layout in pure CSS for low-end Android and
+            iOS installs.
+          </li>
+          <li>Kept the dependency surface minimal to hold the install size down.</li>
+        </ul>
+      </article>
+
+      <p class="compact">
+        <span class="k">GIAN</span>Personal finance and net-worth tracker;
+        <a href="https://gianwealth.vercel.app/">gianwealth.vercel.app</a>
+      </p>
+      <p class="compact">
+        <span class="k">Scheduler</span>Scheduling engine packaged as an installable TypeScript PWA;
+        <a href="https://github.com/marcreantaso/Scheduler">code</a>
+      </p>
+      <p class="compact">
+        <span class="k">LibrarySystem</span>Object-oriented library management system in core Java;
+        <a href="https://github.com/marcreantaso/LibrarySystem">code</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="edu-head">
+        <h3>Pamantasan ng Cabuyao &mdash; BS Computer Science</h3>
+        <span class="when">Present &middot; Expected 2027</span>
+      </div>
+      <p class="meta">
+        College of Computing Studies &middot; Cabuyao, Laguna &middot; Coursework: algorithms, data
+        structures, compiler design, software engineering
+      </p>
+    </section>
+
+    <section>
+      <h2>Awards &amp; Recognition</h2>
+      <p class="award-line">
+        <span class="what">Champion</span> &mdash; The Great Flavor Byte: ACCS &times; Lucky Me Idea
+        Noodling Competition, for AgriGuard.
+      </p>
+      <p class="award-line">
+        <span class="what">Regional tech showcases</span> &mdash; Presented PseudoPy and AgriGuard to
+        regional academic and industry audiences.
+      </p>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+
+      <div class="cert-group">
+        <h3>Cisco Networking Academy</h3>
+        <ul class="cert-list">
+          <li>
+            <span>Computer Hardware Basics</span>
+            <span class="date">Feb 16, 2026 &middot; DICT-ITU DTC Initiative</span>
+          </li>
+          <li>
+            <span>Data Analytics Essentials</span>
+            <span class="date">Feb 16, 2026 &middot; DICT-ITU DTC Initiative</span>
+          </li>
+          <li>
+            <span>Introduction to Cybersecurity</span>
+            <span class="date">Feb 14, 2026</span>
+          </li>
+          <li>
+            <span>Introduction to Data Science</span>
+            <span class="date">Feb 12, 2026</span>
+          </li>
+          <li>
+            <span>Introduction to IoT and Digital Transformation</span>
+            <span class="date">Feb 12, 2026</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cert-group">
+        <h3>Cloud, web and entrepreneurship</h3>
+        <ul class="cert-list">
+          <li>
+            <span>AWS Training &amp; Certification &mdash; Introduction to Amazon EC2</span>
+            <span class="date">Sep 26, 2026</span>
+          </li>
+          <li>
+            <span
+              >Udemy &middot; Learnify IT &mdash; Build 11 JavaScript Application and Web JavaScript
+              BootCamp</span
+            >
+            <span class="date">Feb 9, 2026 &middot; 6 hours</span>
+          </li>
+          <li>
+            <span>Wadhwani Foundation &mdash; Ignite Philippines</span>
+            <span class="date">Mar 1, 2026 &middot; 42 hours</span>
+          </li>
+          <li>
+            <span>TED-Ed Educator Talks &mdash; Idea Workshop</span>
+            <span class="date">Completion</span>
+          </li>
+        </ul>
+      </div>
+
+      <p class="note">
+        Certificate files:
+        <a
+          href="https://drive.google.com/drive/folders/1AT3UlRhI-XjQyQSPWYO1AzwpqOTYdCtJ"
+          >Google Drive credential folder</a
+        >. Live systems and repositories: <a href="https://github.com/marcreantaso">GitHub</a>.
+      </p>
+    </section>
+  </body>
+</html>

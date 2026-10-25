@@ -57,14 +57,15 @@ export function Hero() {
               variants={item}
               className="mt-7 max-w-xl text-fluid-lg leading-relaxed text-muted"
             >
-              I&apos;m <span className="font-medium text-ink">{site.name}</span>, a full-stack
-              software engineer and CS student who enjoys building reliable systems and clean
-              interfaces.
+              I&apos;m <span className="font-medium text-ink">{site.name}</span> — a Computer Science
+              student and aspiring technology entrepreneur focused on building practical software that
+              turns ideas into working products.
             </motion.p>
 
             <motion.p variants={item} className="mt-4 max-w-xl text-sm leading-relaxed text-muted/85">
-              I build compiler tools, offline-first PWAs, and precision AgTech platforms. I also enjoy
-              turning complex ideas into interfaces people can actually use.
+              I want to understand people and systems, compete at a high level, figure out what makes
+              performance better, and eventually turn that knowledge into products, businesses, or
+              systems that create value.
             </motion.p>
 
             <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">

@@ -1,5 +1,6 @@
 import { ArrowUpRight, BadgeCheck, ExternalLink } from "lucide-react";
 import {
+  academicFolder,
   certifications,
   credentialsFolder,
   type CredentialAccent,
@@ -26,6 +27,9 @@ const ACCENT: Record<CredentialAccent, { badge: string; icon: string; glow: stri
   },
 };
 
+const DRIVE_LINK =
+  "inline-flex items-center gap-2.5 rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-faint transition hover:border-neon/30 hover:text-neon";
+
 export function Certifications() {
   return (
     <section id="credentials" className="relative scroll-mt-24 py-24 sm:py-28">
@@ -41,20 +45,32 @@ export function Certifications() {
                 <span className="text-muted/80">proof of work.</span>
               </>
             }
-            description="Certificates from Cisco Networking Academy, AWS, Udemy, Wadhwani Foundation, and TED-Ed. Every card opens the original certificate, so you can check the source yourself."
+            description="Certificates from Cisco Networking Academy, AWS, Udemy, Wadhwani Foundation, and TED-Ed, plus academic honors and participation records. Every card opens the original certificate, so you can check the source yourself."
           />
 
           <Reveal delay={0.1} className="shrink-0">
-            <a
-              href={credentialsFolder}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center gap-2.5 rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-faint transition hover:border-neon/30 hover:text-neon"
-            >
-              <BadgeCheck size={13} aria-hidden="true" />
-              {certifications.length} credentials · Google Drive
-              <ArrowUpRight size={12} aria-hidden="true" />
-            </a>
+            <div className="flex flex-wrap gap-2 lg:justify-end">
+              <a
+                href={credentialsFolder}
+                target="_blank"
+                rel="noreferrer noopener"
+                className={DRIVE_LINK}
+              >
+                <BadgeCheck size={13} aria-hidden="true" />
+                {certifications.length} credentials · Google Drive
+                <ArrowUpRight size={12} aria-hidden="true" />
+              </a>
+              <a
+                href={academicFolder}
+                target="_blank"
+                rel="noreferrer noopener"
+                className={DRIVE_LINK}
+              >
+                <BadgeCheck size={13} aria-hidden="true" />
+                Academic records &amp; honors · Google Drive
+                <ArrowUpRight size={12} aria-hidden="true" />
+              </a>
+            </div>
           </Reveal>
         </div>
 
@@ -125,7 +141,7 @@ export function Certifications() {
         </div>
 
         <p className="mt-8 text-center font-mono text-[9px] uppercase tracking-[0.18em] text-faint/70">
-          Original certificate files open in Google Drive · dates shown only when printed
+          Original files open in Google Drive · dates shown only when printed
         </p>
       </div>
     </section>
