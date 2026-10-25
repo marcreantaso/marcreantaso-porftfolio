@@ -125,7 +125,7 @@ export function Certifications() {
         </div>
 
         <p className="mt-8 text-center font-mono text-[9px] uppercase tracking-[0.18em] text-faint/70">
-          Original certificate files open in Google Drive · dates verified from each certificate
+          Original certificate files open in Google Drive · dates shown only when printed
         </p>
       </div>
     </section>

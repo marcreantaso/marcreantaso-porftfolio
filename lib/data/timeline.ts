@@ -49,7 +49,7 @@ export const timeline: TimelineEntry[] = [
     id: "bear-esports",
     track: "esports",
     title: "Roamer, BEAR ESPORTS MAIN",
-    org: "Player",
+    org: "Team Falcons Academy",
     team: "BEAR ESPORTS MAIN",
     event: "Tambay League",
     body:
@@ -60,7 +60,7 @@ export const timeline: TimelineEntry[] = [
     id: "tsp-falcons",
     track: "esports",
     title: "Roamer, TSP FALCONS",
-    org: "Player",
+    org: "Team Falcons Academy",
     team: "TSP FALCONS",
     event: "SM Cyber League",
     result: "3rd Place",
@@ -72,7 +72,7 @@ export const timeline: TimelineEntry[] = [
     id: "no-doubt-epro",
     track: "esports",
     title: "Roamer, NO DOUBT EPRO",
-    org: "Player",
+    org: "Team Falcons Academy",
     team: "NO DOUBT EPRO",
     event: "Smart Play NCE Regionals",
     body:
@@ -83,13 +83,12 @@ export const timeline: TimelineEntry[] = [
     id: "tsp-falcons-laguna",
     track: "esports",
     title: "Roamer, TSP FALCONS LAGUNA",
-    org: "Player",
+    org: "Team Falcons Academy",
     team: "TSP FALCONS LAGUNA",
     event: "Smart Play × ACCS · School Edition",
-    result: "2nd Place",
     body:
-      "Placed 2nd with TSP FALCONS LAGUNA in the Smart Play × ACCS school edition, balancing lane pressure with setup for team fights.",
-    tags: ["School Edition", "Smart Play × ACCS", "2nd Place"],
+      "Played roamer for TSP FALCONS LAGUNA in the Smart Play × ACCS school edition, balancing lane pressure with setup for team fights.",
+    tags: ["School Edition", "Smart Play × ACCS", "Roamer"],
   },
   {
     id: "pnc-esports",

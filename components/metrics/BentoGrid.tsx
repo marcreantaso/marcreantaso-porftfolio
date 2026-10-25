@@ -109,10 +109,10 @@ export function BentoGrid() {
             delay={0.1}
             className="md:col-span-3 lg:col-span-3"
             title="Macro before mechanics."
-            description="I play MLBB as a roamer for Player, BEAR ESPORTS MAIN, TSP FALCONS, and NO DOUBT EPRO, plus PnC Esports. I read the map, manage pressure, and make decisions quickly."
+            description="MLBB roamer for Team Falcons Academy across BEAR ESPORTS MAIN, TSP FALCONS, NO DOUBT EPRO, and TSP FALCONS LAGUNA, plus PnC Esports. I read the map, manage pressure, and make decisions quickly."
             footer={
               <>
-                <span>Player</span>
+                <span>Team Falcons Academy</span>
                 <span>PnC Esports</span>
               </>
             }

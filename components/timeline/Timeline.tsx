@@ -27,7 +27,7 @@ const TRACKS = {
   esports: {
     label: "Esports",
     heading: "Esports",
-    summary: "6 competitive entries · 2 podium finishes · 1 campus title",
+    summary: "6 competitive entries · 1 podium finish · 1 campus title",
     Icon: Gamepad2,
     dot: "bg-plasma",
     text: "text-plasma",

@@ -1,5 +1,5 @@
 export const site = {
-  name: "Marc ",
+  name: "Marc",
   displayName: "Marc Reantaso",
   firstName: "Marc",
   initials: "MR",
@@ -7,7 +7,7 @@ export const site = {
   tagline:
     "I like building software that is thoughtful, useful, and easy to understand.",
   description:
-    "I am a BS Computer Science student at Pamantasan ng Cabuyao. I build compiler tools, offline-first PWAs, precision AgTriech platforms, and interfaces with a strong focus on detail.",
+    "I am a BS Computer Science student at Pamantasan ng Cabuyao. I build compiler tools, offline-first PWAs, precision AgTech platforms, and interfaces with a strong focus on detail.",
   email: "reantasomarcgian@gmail.com",
   location: "Cabuyao, Laguna, Philippines",
   school: "Pamantasan ng Cabuyao",
