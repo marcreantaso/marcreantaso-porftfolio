@@ -34,7 +34,7 @@ export function ProjectGrid() {
           <Reveal delay={0.1} className="shrink-0">
             <div className="flex items-center gap-3 rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-faint">
               <span className="h-1.5 w-1.5 rounded-full bg-mint" aria-hidden="true" />
-              4 projects · 2 live
+              4 projects · 4 live
             </div>
           </Reveal>
         </div>
@@ -99,8 +99,8 @@ export function ProjectGrid() {
 
         <p className="mt-6 flex items-start gap-2 font-mono text-[9px] leading-relaxed text-faint/80">
           <GithubIcon size={11} className="mt-0.5 shrink-0" />
-          Correspondence: AgriGuard&apos;s public demo is currently offline; its repository remains
-          available. PseudoPy and CaDeT link to live deployments.
+          Correspondence: all four featured projects link to live deployments, with repositories
+          available for reference.
         </p>
       </div>
 

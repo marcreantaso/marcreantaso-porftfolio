@@ -109,7 +109,7 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "Repository", href: "https://github.com/marcreantaso/AgriGuard" },
-      { label: "Public demo", note: "currently offline" },
+      { label: "Live system", href: "https://agriguardph.vercel.app/login" },
     ],
     accent: "mint",
     visual: "topology",
@@ -213,7 +213,10 @@ export const projects: Project[] = [
       { value: "PWA", label: "installable" },
       { value: "Mobile", label: "first interface" },
     ],
-    links: [{ label: "Repository", href: "https://github.com/marcreantaso/WasteLink-PH" }],
+    links: [
+      { label: "Live system", href: "https://wastelinkph.vercel.app/dashboard" },
+      { label: "Repository", href: "https://github.com/marcreantaso/WasteLink-PH" },
+    ],
     accent: "mint",
     visual: "offline",
     preview: "/images/projects/wastelink.png",

@@ -7,7 +7,7 @@ export const site = {
   tagline:
     "I like building software that is thoughtful, useful, and easy to understand.",
   description:
-    "Computer Science student and aspiring technology entrepreneur building practical software — compiler tools, offline-first PWAs, and precision AgTech platforms.",
+    "Computer Science student and aspiring technology entrepreneur building practical software, including compiler tools, offline-first PWAs, and precision AgTech platforms.",
   email: "reantasomarcgian@gmail.com",
   location: "Cabuyao, Laguna, Philippines",
   school: "Pamantasan ng Cabuyao",

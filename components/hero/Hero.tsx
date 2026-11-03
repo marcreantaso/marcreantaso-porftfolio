@@ -57,7 +57,7 @@ export function Hero() {
               variants={item}
               className="mt-7 max-w-xl text-fluid-lg leading-relaxed text-muted"
             >
-              I&apos;m <span className="font-medium text-ink">{site.name}</span> — a Computer Science
+              I&apos;m <span className="font-medium text-ink">{site.name}</span>, a Computer Science
               student and aspiring technology entrepreneur focused on building practical software that
               turns ideas into working products.
             </motion.p>

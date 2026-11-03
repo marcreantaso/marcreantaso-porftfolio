@@ -1,4 +1,4 @@
-# Marc Gian R. Reantaso — Portfolio
+# Marc Gian R. Reantaso, Portfolio
 
 A dark, mathematically themed portfolio built with the Next.js App Router and exported as a static site for GitHub Pages.
 
@@ -6,14 +6,14 @@ A dark, mathematically themed portfolio built with the Next.js App Router and ex
 
 ## What is inside
 
-- **Hero** — a lazy-loaded, pointer-reactive React Three Fiber torus knot with an SVG fallback, plus a live KaTeX calculator (function plot, derivative, Simpson integral).
-- **Systems** — four case studies (PseudoPy, AgriGuard, CaDeT, WasteLink PH) with full-screen architecture modals, plus two compact repository cards.
-- **Metrics** — a bento control panel covering the compiler pipeline, the ACCS × Lucky Me award, esports decision-making, and complexity classes.
-- **Sandbox** — a real in-browser compiler: lexer → recursive-descent parser → positioned AST → Python emitter → loop-nesting complexity heuristic. Includes presets, token stream, line mapping, and diagnostics.
-- **Timeline** — academic, esports, and competition entries, including competitive runs across Tambay League, SM Cyber League, and Smart Play. Ongoing items say “Present” rather than inventing dates.
-- **Credentials** — nine verified certificates from Cisco Networking Academy, AWS, Udemy, Wadhwani Foundation, and TED-Ed, deduplicated and linked to the original files in Google Drive.
-- **Contact** — validated terminal-style form that posts to Formspree when configured, otherwise opens a prefilled `mailto:` message. Includes a direct email copy button.
-- **Background engine** — switchable Vector Field, Fibonacci Grid, Voronoi, and Perlin Waves canvases with a persisted preference and reduced-motion support.
+- **Hero**: a lazy-loaded, pointer-reactive React Three Fiber torus knot with an SVG fallback, plus a live KaTeX calculator (function plot, derivative, Simpson integral).
+- **Systems**: four case studies (PseudoPy, AgriGuard, CaDeT, WasteLink PH) with full-screen architecture modals, plus two compact repository cards.
+- **Metrics**: a bento control panel covering the compiler pipeline, the ACCS × Lucky Me award, esports decision-making, and complexity classes.
+- **Sandbox**: a real in-browser compiler: lexer → recursive-descent parser → positioned AST → Python emitter → loop-nesting complexity heuristic. Includes presets, token stream, line mapping, and diagnostics.
+- **Timeline**: academic, esports, and competition entries, including competitive runs across Tambay League, SM Cyber League, and Smart Play. Ongoing items say “Present” rather than inventing dates.
+- **Credentials**: nine verified certificates from Cisco Networking Academy, AWS, Udemy, Wadhwani Foundation, and TED-Ed, deduplicated and linked to the original files in Google Drive.
+- **Contact**: validated terminal-style form that posts to Formspree when configured, otherwise opens a prefilled `mailto:` message. Includes a direct email copy button.
+- **Background engine**: switchable Vector Field, Fibonacci Grid, Voronoi, and Perlin Waves canvases with a persisted preference and reduced-motion support.
 
 ## Stack
 
@@ -111,10 +111,10 @@ public/
 All figures and claims come from the repositories and confirmed results. There are no invented benchmark numbers or dates:
 
 - PseudoPy and CaDeT link to live deployments.
-- AgriGuard’s public demo is marked offline; its repository remains linked.
-- The award is listed as **Champion — The Great Flavor Byte: ACCS × Lucky Me Idea Noodling Competition** for AgriGuard, without an inferred year.
+- AgriGuard and WasteLink PH link to their live Vercel deployments, alongside the existing PseudoPy and CaDeT demos.
+- The award is listed as **Champion: The Great Flavor Byte: ACCS × Lucky Me Idea Noodling Competition** for AgriGuard, without an inferred year.
 - Certification dates and titles are transcribed from the certificate PDFs; every credential links to its original file in the public Google Drive folder. Duplicate “Update” copies are omitted.
-- A second Drive folder holds academic honors and participation records. It is linked as supplementary evidence only — nothing in it is transcribed into a credential card or a dated claim.
+- A second Drive folder holds academic honors and participation records. It is linked as supplementary evidence only. Nothing in it is transcribed into a credential card or a dated claim.
 - Complexity labels in the sandbox are structural heuristics, not benchmark measurements.
 
 ## Accessibility
