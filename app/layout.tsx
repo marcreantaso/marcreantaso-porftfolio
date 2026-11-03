@@ -34,7 +34,7 @@ const ogImage = {
 export const metadata: Metadata = {
   metadataBase: new URL(site.siteUrl),
   title: {
-    default: "Marc",
+    default: "Marc Gian R. Reantaso",
     template: "%s",
   },
   description: site.description,
