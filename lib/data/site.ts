@@ -1,5 +1,5 @@
 export const site = {
-  name: "Marc",
+  name: "Marc Gian R. Reantaso",
   displayName: "Marc Reantaso",
   firstName: "Marc",
   initials: "MR",

@@ -78,14 +78,18 @@ export function Navbar() {
       >
         <nav
           aria-label="Primary"
-          className="mx-auto flex h-16 w-full max-w-[86rem] items-center justify-between gap-4 px-5 sm:px-8"
+          className="mx-auto flex h-16 w-full max-w-[86rem] items-center justify-between gap-3 px-4 sm:gap-4 sm:px-8"
         >
-          <Link href="/" className="group flex items-center gap-3" aria-label={`${site.name} home`}>
-            <span className="text-neon transition-transform duration-500 group-hover:rotate-45">
-              <PhiMark className="h-8 w-8" />
+          <Link
+            href="/"
+            className="group flex min-w-0 items-center gap-2.5 sm:gap-3"
+            aria-label={`${site.name} home`}
+          >
+            <span className="shrink-0 text-neon transition-transform duration-500 group-hover:rotate-[-8deg]">
+              <PhiMark className="h-8 w-8 sm:h-9 sm:w-9" />
             </span>
-            <span className="flex flex-col leading-none">
-              <span className="text-[13px] font-semibold tracking-[-0.01em] text-ink">
+            <span className="flex min-w-0 flex-col leading-none">
+              <span className="truncate text-[12px] font-semibold tracking-[-0.01em] text-ink sm:text-[13px]">
                 {site.displayName}
               </span>
               <span className="mt-1 hidden font-mono text-[9px] uppercase tracking-[0.2em] text-faint sm:block">
@@ -143,7 +147,7 @@ export function Navbar() {
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Close navigation" : "Open navigation"}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-ink transition hover:border-neon/35 hover:text-neon lg:hidden"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-ink transition hover:border-neon/35 hover:text-neon lg:hidden"
             >
               {open ? <X size={18} /> : <Menu size={18} />}
             </button>
@@ -170,7 +174,7 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={reduce ? { opacity: 0 } : { opacity: 0, y: -12, scale: 0.98 }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] as const }}
-              className="absolute inset-x-3 top-[4.35rem] z-50 overflow-hidden rounded-2xl border border-white/10 bg-space/95 p-3 shadow-2xl backdrop-blur-2xl lg:hidden"
+              className="absolute inset-x-2 top-[4.35rem] z-50 max-h-[calc(100svh-5.5rem)] overflow-y-auto rounded-2xl border border-white/10 bg-space/95 p-3 shadow-2xl backdrop-blur-2xl sm:inset-x-3 lg:hidden"
             >
               <div className="flex flex-col">
                 {navigation.map((item) => (
